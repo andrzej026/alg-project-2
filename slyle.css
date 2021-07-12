@@ -88,6 +88,7 @@ input:focus{
     padding-left: 30px;
     border: 1px solid #C4C4C4;
     border-radius: 10px ;
+    display: none;
 }
 
 #list li {
