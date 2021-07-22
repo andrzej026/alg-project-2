@@ -82,13 +82,16 @@ input:focus{
     left: 27px;
 }
 
+.task {
+    outline: none;
+}
+
 #list {
     margin-left: 28px;
     width: 76%;
     padding-left: 30px;
-    border: 1px solid #C4C4C4;
+    border: 0px;
     border-radius: 10px ;
-    display: none;
 }
 
 #list li {
@@ -125,4 +128,11 @@ input:focus{
     background: #833AE0;
     border: 1px solid #833AE0;
     color: white;
+}
+
+.sorting.down:hover{
+    background: url(images/Group-73.svg);
+}
+.sorting.up:hover{
+    background: url(images/Group-91.svg);
 }
