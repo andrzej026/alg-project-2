@@ -90,8 +90,9 @@ input:focus{
     margin-left: 28px;
     width: 76%;
     padding-left: 30px;
-    border: 0px;
+    border: 1px solid #C4C4C4;
     border-radius: 10px ;
+    display: none;
 }
 
 #list li {
@@ -130,9 +131,23 @@ input:focus{
     color: white;
 }
 
-.sorting.down:hover{
-    background: url(images/Group-73.svg);
+.sorting.down {
+    background: url("images/Group-74.svg");
+    width: 25px;
+    height: 15px;
+    cursor: pointer;
 }
-.sorting.up:hover{
-    background: url(images/Group-91.svg);
+
+.sorting.down:hover {
+    background: url("images/Group-73.svg");
+}
+.sorting.up {
+    background: url("images/Group-90.svg");
+    width: 25px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.sorting.up:hover {
+    background: url("images/Group-91.svg");
 }

@@ -4,50 +4,66 @@ const list = document.querySelector('#list')
 const form = document.querySelector('#form')
 const sorting = document.querySelector('.sorting')
 
+
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     if (textInput.value.trim() === '' || textInput.value === null) {
         return false
     } else {
-        list.style.border = '1px solid #C4C4C4';
-        let li = document.createElement('li');
-        let task = document.createElement('span')
+        list.style.display = 'block';
+        const item = document.createElement('li');
+        const task = document.createElement('span')
+        item.classList.add('item')
         task.classList.add('task')
         task.innerHTML = textInput.value;
-        list.appendChild(li);
-        textInput.value = '';
         task.setAttribute('contenteditable', 'true')
-        li.appendChild(task)
+        list.appendChild(item);
+        item.appendChild(task)
+        textInput.value = '';
 
+        
+        const items = document.querySelectorAll('.item')
         const remove = document.createElement('span')
         remove.classList = 'button-remove';
         remove.innerHTML = '&times';
-        li.appendChild(remove);
+        item.appendChild(remove);
         remove.addEventListener('click', function(event) {
-            list.removeChild(li);
-            // console.log(list);
+            
+            console.log(items.length);
+            if (items.length === 1) {
+                // console.log(items);
+                list.removeChild(item);
+                // list.style.display = 'none';
+            } else {
+                console.log(item);
+                // console.log(items);
+                list.removeChild(item);
+            }
         })
+
         
         
-        const items = document.querySelectorAll('#list li');
-        let sorted = [...items]
         // console.log(list);
         // console.log(items);
         sorting.addEventListener('click', function() {
-            list.innerHTML = '';
-            sorted.sort(function(a, b) {
-                console.log(items)
-                if (a.innerHTML > b.innerHTML) {return 1;}
-                if (a.innerHTML < b.innerHTML) {return -1;}
-            });
-            list.innerHTML = '';        
-            sorting.setAttribute('src', 'images/Group-90.svg')
-            sorting.classList.remove('down')
-            sorting.classList.add('up')
-            for (let task of sorted) {
-                list.appendChild(task);
+            let sorted = [];
+            for (let i = 0; i < items.length; i++) {
+                // console.log(items);
+                sorted.push(items[i]);
             }
-            
+            sorted.sort(function(a, b) {
+                // console.log(items);
+                if (a.textContent > b.textContent) {return 1;}
+                if (a.textContent < b.textContent) {return -1;}
+            });
+            sorted.forEach(task => list.appendChild(task));
+            sorting.setAttribute('src', 'images/Group-90.svg');
+            sorting.classList.replace('down', 'up');
+            console.log(sorted);
+            // list.innerHTML = ''
+            // for (let task of sorted) {
+            //     list.appendChild(task);
+            // } 
         })
     }
 })
