@@ -78,11 +78,19 @@ input {
     box-sizing: border-box;
     border-radius: 10px;
     margin-top: 12px;
+    padding-left: 25px;
 }
 
 input:focus{
     border-width: 2px;
     outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 10em whitesmoke inset !important;
 }
 
 .button-clean {    
