@@ -9,18 +9,32 @@
 </head>
 <body>
     <div id="wrapper">
-        <div class="head"></div>
-        <h1>To-Do List</h1>
-        <div class="sorting down"></div>
-        <form id="form">
-            <input id = "input" type="text">
-            <ul id="list"></ul>
-            <button id="button-add" type="submit">
-                <span class="text">Добавить</span>
-                <span class="plus">+</span>
-            </button>
-        </form>
-        <div class="foot"></div>
+        <div class="application">
+            <div class="head"></div>
+            <div class="content">
+                <h1>To-Do List</h1>
+                <div class="sorting-button">
+                    <div class="sorting down"></div>
+                </div>
+                <div class="task-manager">
+                    <form id="form">
+                        <div class="input-block">
+                            <input id="input" type="text">
+                            <button type="reset" class="button-clean">&times;</button>
+                        </div>
+                        <div class="task-list">
+                            <ul id="list"></ul>
+                        </div>
+                        <div class="double-button">                            
+                            <button id="button-add" type="submit">
+                                <span class="text">Добавить</span>
+                                <span class="plus">+</span>
+                            </button>
+                        </div>
+                    </form>
+                </div> 
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

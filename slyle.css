@@ -1,12 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,900;1,300;1,400&display=swap');
+
+body {
+    margin: 0;
+}
+
 #wrapper {
+    height: 100vh;
+    display: flex;
+}
+
+.application {
     width: 336px;
-    height: 100%;
-    margin-top: 232px;
-    margin-left: 408px;
     border: 1px solid #C4C4C4;
-    box-sizing: border-box;
     border-radius: 10px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.content {    
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-bottom: 19px;
 }
 
 .head {
@@ -18,15 +32,39 @@
 }
 
 h1{
-    font-family: Roboto;
+    font-family: 'Roboto';
     font-weight: 900;
     font-size: 26px;
     line-height: 30px;
     text-align: center;
 }
 
-.sorting{
-    margin-left: 281px;
+.sorting-button{
+    display: flex;
+    justify-content: flex-end;
+    width: 97%;
+}
+
+.sorting.down {
+    background: url("images/Group-74.svg");
+    width: 25px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.sorting.down:hover {
+    background: url("images/Group-73.svg");
+}
+
+.sorting.up {
+    background: url("images/Group-90.svg");
+    width: 25px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.sorting.up:hover {
+    background: url("images/Group-91.svg");
 }
 
 input {
@@ -34,18 +72,53 @@ input {
     font-weight: 300;
     font-size: 18px;
     font-style: italic;
-    width: 286px;
+    width: 284px;
     height: 40px;
     border: 1px solid #C4C4C4;
     box-sizing: border-box;
     border-radius: 10px;
     margin-top: 12px;
-    margin-left: 28px;
 }
 
 input:focus{
     border-width: 2px;
     outline: none;
+}
+
+.button-clean {    
+    position: relative;
+    left: 232px;
+    bottom: 30px;
+    
+}
+
+#list {
+    padding-left: 30px;
+    border: 1px solid #C4C4C4;
+    border-radius: 10px ;
+    display: none;
+    box-sizing: border-box;
+}
+
+#list li {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 14px;
+    list-style-type: none;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+}
+
+.task {
+    outline: none;
+}
+
+.double-button {
+    display: flex;
+    justify-content: center;
 }
 
 #button-add {
@@ -54,12 +127,19 @@ input:focus{
     justify-content: center;
     width: 150px;
     height: 42px;
-    margin-top: 18px;
-    margin-left: 92px;
     background: #833AE0;
     border: 0px;
     border-radius: 71px;
     color: white;
+    cursor: pointer;
+}
+
+#button-add:hover {
+    background: #9953F1;
+}
+
+#button-add:hover .plus {
+    background: #AA68FE;
 }
 
 .plus {
@@ -82,38 +162,7 @@ input:focus{
     left: 27px;
 }
 
-.task {
-    outline: none;
-}
-
-#list {
-    margin-left: 28px;
-    width: 76%;
-    padding-left: 30px;
-    border: 1px solid #C4C4C4;
-    border-radius: 10px ;
-    display: none;
-}
-
-#list li {
-    font-family: 'Roboto';
-    font-weight: 400;
-    font-size: 14px;
-    list-style-type: none;
-    margin-top: 12px;
-    margin-bottom: 12px;
-    display: flex;
-    justify-content: space-between;
-    padding-right: 20px;
-
-}
-
-.foot {
-    width: 100%;
-    height: 19px;
-}
-
-.button-remove {
+.button-remove, .button-clean {
     width: 20px;
     height: 20px;
     border: 1px solid #C4C4C4;
@@ -125,29 +174,8 @@ input:focus{
     text-align: center;
 }
 
-.button-remove:hover {
+.button-remove:hover, .button-clean:hover {
     background: #833AE0;
     border: 1px solid #833AE0;
     color: white;
-}
-
-.sorting.down {
-    background: url("images/Group-74.svg");
-    width: 25px;
-    height: 15px;
-    cursor: pointer;
-}
-
-.sorting.down:hover {
-    background: url("images/Group-73.svg");
-}
-.sorting.up {
-    background: url("images/Group-90.svg");
-    width: 25px;
-    height: 15px;
-    cursor: pointer;
-}
-
-.sorting.up:hover {
-    background: url("images/Group-91.svg");
 }

@@ -49,9 +49,14 @@ function sortingup() {
     for (let i = 0; i < items.length; i++) {
         sorted.push(items[i]);
     }
-    sorted.sort(function(a, b) {
-        if (a.textContent > b.textContent) {return 1;} // как записать элегантнее, в одну строчку с одинм условием?? 
-        if (a.textContent < b.textContent) {return -1;} // Второе не нужно, но без него не срабатывает
+    sorted.sort((a, b) => {
+        if (a.textContent > b.textContent) {
+            return 1;
+        } 
+        if (a.textContent < b.textContent) {
+            return -1;
+        }
+        return 0
     });
     sorted.forEach(task => list.appendChild(task));
     sorting.classList.replace('down', 'up');
@@ -62,9 +67,14 @@ function sortingdown () {
     for (let i = 0; i < items.length; i++) {
         sorted.push(items[i]);
     }
-    sorted.sort(function(a, b) {
-        if (a.textContent > b.textContent) {return -1;} // как записать элегантнее, в одну строчку с одинм условием??
-        if (a.textContent < b.textContent) {return 1;}
+    sorted.sort((a, b) => {
+        if (a.textContent > b.textContent) {
+            return -1;
+        } 
+        if (a.textContent < b.textContent) {
+            return 1;
+        }
+        return 0
     });
     sorted.forEach(task => list.appendChild(task));
     sorting.classList.replace('up', 'down');
