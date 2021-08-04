@@ -58,7 +58,9 @@ function sortingup() {
         }
         return 0
     });
-    sorted.forEach(task => list.appendChild(task));
+    for (let task of sorted) {
+        list.appendChild(task);
+    }
     sorting.classList.replace('down', 'up');
 }
 
@@ -76,6 +78,8 @@ function sortingdown () {
         }
         return 0
     });
-    sorted.forEach(task => list.appendChild(task));
+    for (let task of sorted) {
+        list.appendChild(task);
+    }
     sorting.classList.replace('up', 'down');
 }
