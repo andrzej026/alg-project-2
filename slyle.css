@@ -97,7 +97,21 @@ input:-webkit-autofill:active {
     position: relative;
     left: 232px;
     bottom: 30px;
-    
+    width: 20px;
+    height: 20px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 71px;
+    color: #C4C4C4;
+    background: white;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
 }
 
 #list {
@@ -171,7 +185,7 @@ input:-webkit-autofill:active {
     left: 27px;
 }
 
-.button-remove, .button-clean {
+.button-remove{
     width: 20px;
     height: 20px;
     border: 1px solid #C4C4C4;
@@ -181,6 +195,9 @@ input:-webkit-autofill:active {
     background: white;
     cursor: pointer;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button-remove:hover, .button-clean:hover {
